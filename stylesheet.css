@@ -1,0 +1,49 @@
+*
+{
+    font-family: monospace;
+    color: #bbbbbb;
+    background-color: #111111;
+}
+
+#header_page
+{
+    text-align: center;
+    color: #ffff99;
+    border-style: outset;
+    background-color: #222222;
+    border-color: #191919;
+    border-radius: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-decoration-line: underline;
+}
+
+#git_repos
+{
+    text-align: center;
+    margin-top: 5%;
+}
+
+#header_git_repos
+{
+    font-size: 2em;
+    color: #bbffbb;
+}
+
+#list_git_repos
+{
+    display: inline-block;
+    text-align: left;
+    font-size: 1.25em;
+}
+
+#git_repos a
+{
+    color: #9999ff;
+}
+
+#git_repos p
+{
+    font-size: 1em;
+    color: #888888;
+}
