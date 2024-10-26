@@ -16,12 +16,17 @@
     padding-bottom: 20px;
     padding-top: 20px;
     text-decoration-line: underline;
+    width: 50%;
+    margin: auto;
 }
 
 #git_repos
 {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
 }
 
 #header_git_repos
@@ -35,6 +40,7 @@
     display: inline-block;
     text-align: left;
     font-size: 1.25em;
+    list-style-type: square;
 }
 
 #git_repos a
@@ -46,4 +52,5 @@
 {
     font-size: 1em;
     color: #888888;
+//    width: 50%;
 }
