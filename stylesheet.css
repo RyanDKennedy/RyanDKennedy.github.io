@@ -1,6 +1,6 @@
 :root
 {
-    --primary_color: #009693;
+    --primary_color: #007471;
     --secondary_color: #004d96;
 
     --font_color: #bbbbbb;
@@ -53,7 +53,6 @@
 	    {
 		text-decoration: none;
 		color: var(--font_color);
-		transition: 0.3s;
 		background-color: var(--primary_color);
 		padding-right: 1ch;
 	    }
@@ -126,16 +125,14 @@
 
 	    text-decoration: none;
 	    color: var(--font_color);
-	    transition: 0.3s;
 	}
-
-	a :hover
-	{
-	    background-color: var(--secondary_color);
-	    color: var(--font_color_secondary);
-	}
-
     }
+    #navbar_links:hover a:hover
+    {
+	background-color: var(--secondary_color);
+	color: var(--font_color_secondary);
+    }
+
 }
 }
 
