@@ -1,0 +1,26 @@
+#header
+{
+    text-align: center;
+}
+
+#shrek_fig
+{
+    display:block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    img
+    {
+	display: block;
+	width: 50%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;    
+    }
+
+    figcaption
+    {
+	text-align: center;
+    }
+}
