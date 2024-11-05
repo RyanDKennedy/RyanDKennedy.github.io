@@ -12,17 +12,91 @@
     background-color: var(--background_color);
 }
 
+@media (max-width: 449px)
+{
+    #navbar
+    {
+	font-size: 2rem;
+	background-color: var(--primary_color);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	span
+	{
+	    display: inline-block;
+	    padding-left: 1ch;
+	    align-self: center;
+	    color: var(--font_color_secondary);
+	}
+	
+	#navbar_waffle
+	{
+	    display: block;
+	    padding-right: 1ch;
+	    align-self: center;
+	    color: var(--secondary_color);
+	}
+	
+	#navbar_links
+	{
+	    display: none;
+	    position: absolute;
+	    right: 0;
+
+	    a
+	    {
+		text-decoration: none;
+		color: var(--font_color);
+		transition: 0.3s;
+		background-color: var(--primary_color);
+		padding-right: 1ch;
+	    }
+	    
+	    a:hover
+	    {
+		background-color: var(--secondary_color);
+		color: var(--font_color_secondary);
+	    }
+	    
+	}
+	
+	#navbar_dropdown
+	{
+	    display: inline-block;
+	    position: relative;
+	}
+
+	#navbar_dropdown:hover #navbar_links
+	{
+	    display:block;
+	}
+
+	#navbar_dropdown:hover #navbar_waffle
+	{
+	    color: var(--primary_color);
+	    background-color: var(--secondary_color);
+	}
+	
+    }
+    
+}
+
+@media (min-width: 450px)
+{
 #navbar
 {
     font-size: 2rem;
-
     background-color: var(--primary_color);
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-
     position: fixed;
     width: 100%;
     top: 0;
@@ -36,15 +110,15 @@
 	color: var(--font_color_secondary);
     }
 
+    #navbar_waffle
+    {
+	display: none;
+    }
+
     #navbar_links
     {
-	display: flex;
-	justify-content: flex-end;
-	flex-wrap: nowrap;
-	flex-direction: row;
-	flex-grow: 4;
-	align-self: center;
-	
+	white-space: nowrap;
+
 	a
 	{
 	    padding-left: 1ch;
@@ -62,16 +136,11 @@
 	}
 
     }
-
-    #navbar_links :hover
-    {
-	    background-color: var(--secondary_color);
-	    color: var(--font_color_secondary);
-    }
-    
+}
 }
 
 #main
 {
     margin-top: 4rem;
 }
+
