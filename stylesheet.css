@@ -39,6 +39,7 @@
 	{
 	    display: block;
 	    padding-right: 1ch;
+	    margin-right: 1ch;
 	    align-self: center;
 	    color: var(--secondary_color);
 	}
@@ -55,6 +56,7 @@
 		color: var(--font_color);
 		background-color: var(--primary_color);
 		padding-right: 1ch;
+		padding-left: 1ch;
 	    }
 	    
 	    a:hover
