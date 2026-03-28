@@ -12,135 +12,71 @@
     background-color: var(--background_color);
 }
 
-@media (max-width: 449px)
+#page_title
 {
-    #navbar
-    {
-	font-size: 2rem;
-	background-color: var(--primary_color);
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-
-	span
-	{
-	    display: inline-block;
-	    padding-left: 1ch;
-	    align-self: center;
-	    color: var(--font_color_secondary);
-	}
-	
-	#navbar_waffle
-	{
-	    display: block;
-	    padding-right: 1ch;
-	    margin-right: 1ch;
-	    align-self: center;
-	    color: var(--secondary_color);
-	}
-	
-	#navbar_links
-	{
-	    display: none;
-	    position: absolute;
-	    right: 0;
-
-	    a
-	    {
-		text-decoration: none;
-		color: var(--font_color);
-		background-color: var(--primary_color);
-		padding-right: 1ch;
-		padding-left: 1ch;
-	    }
-	    
-	    a:hover
-	    {
-		background-color: var(--secondary_color);
-		color: var(--font_color_secondary);
-	    }
-	    
-	}
-	
-	#navbar_dropdown
-	{
-	    display: inline-block;
-	    position: relative;
-	}
-
-	#navbar_dropdown:hover #navbar_links
-	{
-	    display:block;
-	}
-
-	#navbar_dropdown:hover #navbar_waffle
-	{
-	    color: var(--primary_color);
-	    background-color: var(--secondary_color);
-	}
-	
-    }
-    
+    text-shadow: 0px 0px 5px var(--font_color_secondary);
+    color: var(--font_color);
+    font-size: 3em;
+    font-family: Sans-Serif;
+    text-align: center;
+    margin-top: 0;
 }
 
-@media (min-width: 450px)
+.sidebar
 {
-#navbar
-{
-    font-size: 2rem;
-    background-color: var(--primary_color);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 200px;
     position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-
-    span
-    {
-	display: inline-block;
-	padding-left: 1ch;
-	align-self: center;
-	color: var(--font_color_secondary);
-    }
-
-    #navbar_waffle
-    {
-	display: none;
-    }
-
-    #navbar_links
-    {
-	white-space: nowrap;
-
-	a
-	{
-	    padding-left: 1ch;
-	    padding-right: 1ch;
-
-	    text-decoration: none;
-	    color: var(--font_color);
-	}
-    }
-    #navbar_links:hover a:hover
-    {
-	background-color: var(--secondary_color);
-	color: var(--font_color_secondary);
-    }
-
-}
+    height: 100%;
+    overflow: auto;
+    background-color: var(--background_color);
 }
 
-#main
+.sidebar a
 {
-    margin-top: 4rem;
+    display: block;
+    color: var(--font_color);
+    background-color: var(--primary_color);
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active
+{
+    color: var(--font_color_secondary);
+    background-color: var(--secondary_color);
+}
+
+.sidebar a:hover
+{
+    color: var(--font_color_secondary);
+    background-color: var(--secondary_color);    
+}
+
+div.content
+{
+    margin-left: 200px;
+    padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
 
 
