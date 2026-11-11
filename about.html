@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/about.css">
+    <title>Ryan's Webpage</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+      <h1 id="page_title">About Me</h1>
+
+      <figure id="banner_pic">
+	<img src="/resources/smile_straight_edited.png"/>
+      </figure>
+
+      <p id="backstory">When I was younger I wanted to become a programmer because I liked the way the text lit up into different colors when my Dad programmed. I ensued this pathway and I eventually became very interested in how computer work and how they process our programs. After learning a little about how computers work, I became interested in how electricity works. All of the areas that I've been interested in are broadly covered by studying Electrical Engineering, so I decided to study Electrical Engineering.</p>
+
+      <div id="text_section">
+	<h2 class="section_header">Career Goals</h2>
+	<ol>
+	  <li>Study Electrical Engineering at Georgia Tech</li>
+	  <li>Get an internship in a field associated with Electrical Engineering, like embedded design or RF engineering.</li>
+	  <li>Continue to specialize while studying at Georgia Tech in robotics and circuit technology</li>
+	  <li>Graduate and get a job that pays well enough to support myself</li>
+	  <li>Work normal jobs for as long as I need to finance enough money to start my own business</li>
+	  <li>Start my own business even if I make less money than working for somebody else</li>
+	  <li>Sell the business for retirement money</li>
+	</ol>
+
+
+	<h2 class="section_header">Education</h2>
+
+	<div id="education_content">
+	  <p>I'm currently studying at <a href="https://www.gatech.edu/">Georgia Institute of Technology (Georgia Tech)</a> and I'm majoring in Electrical Engineering. I am currently in the second year pursuing a bachelors degree, and I plan on specializing in the <a href="https://ece.gatech.edu/circuit-technology-thread">Circuit Technology</a> and <a href="https://ece.gatech.edu/robotics-autonomous-systems-thread">Robotics</a> threads.</p>
+
+	  <img src="/resources/gatech.png"/>
+	</div>
+	
+	<h2 class="section_header">Relevant Coursework</h2>
+	<ul style="max-width: 50ch; margin-left: auto; margin-right: auto; display: block;">
+	  <li>Calculus I & II - Derivative and Integral Calculus</li>
+	  <li>Physics I & II - Mechanics and Electromagnetism</li>
+	  <li>Linear Algebra (IN PROGRESS)</li>
+	  <li>Digital System Design (IN PROGRESS)</li>
+	</ul>
+	
+	<h2 class="section_header">Skills</h2>
+	<ul id="skills_list">
+	  <li>Programming: Java, Python, C, C++, JavaScript (novice), SQL, Bash, Rust (novice), Elisp, CMake, GLSL</li>
+	  <li>Platforms: Linux (Ubuntu, Arch, Debian)</li>
+	  <li>Hardware: Raspberry Pi, Arduino</li>
+	  <li>Software: FreeCAD, Onshape, GitHub, Creality Slicer, Blender, KiCad (novice)</li>
+	  <li>Languages: English (native), Spanish (beginner)</li>
+	</ul>
+	
+	<h2 class="section_header">Projects</h2>
+	<p style="text-align: center;">You can find my projects <a href="/projects.html">here</a>.</p>
+	
+	<h2 class="section_header">Resume</h2>
+	<p style="text-align: center;">You can find my resume <a href="/resume.html">here</a>.</p>      
+      </div>
+      
+    </div>
+
+    <script>
+	    fetch('/navbar.html')
+		    .then(response => response.text())
+		    .then(html => {
+			    document.getElementById('navbar-div').innerHTML = html;
+			    document.getElementById('navbar-about-id').className = 'active';
+		    })
+		    .catch(error => {
+			    document.getElementById('navbar-div').innerHTML = '<h1>Failed to Load Navbar</h1>';
+			    console.error('Error:', error);
+		    });
+    </script>
+
+
+  </body>
+
+</html>

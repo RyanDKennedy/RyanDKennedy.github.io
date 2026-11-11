@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/projects.css"> 
+    <title>Ryan's Webpage</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+      <h1 id="page_title">Projects</h1>
+
+      <h2 id="projects_title">My Projects</h2>
+
+      <div id="projects_catalog">
+	<div class="image_container">
+	  <a href="/projects/keyboard_hero.html">
+	  <img src="/resources/keyboard_hero.png"/>
+	  <p>Keyboard Hero</p>
+	  </a>
+	</div>
+
+	<div class="image_container">
+	  <a href="/index.html">
+	  <img src="/resources/doggy_scaled.png"/>
+	  <p>Discovery Project (In Progress)</p>
+	  </a>
+	</div>
+
+
+      </div>
+
+    </div>
+
+    <script>
+
+      fetch("/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+	document.getElementById("navbar-div").innerHTML = html;
+	document.getElementById("navbar-projects-id").className = 'active';
+    })
+    .catch(error => {
+	document.getElementById("navbar-div").innerHTML = "<h1>Failed to Load Navbar</h1>";
+	console.error("Error:", error);
+    });
+
+    </script>
+
+
+  </body>
+
+</html>

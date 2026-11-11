@@ -1,0 +1,72 @@
+
+
+#banner_pic
+{
+    display:block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+
+    img
+    {
+	display: block;
+	width: 15%;
+	min-width: 30ch;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+    }
+
+    figcaption
+    {
+	text-align: center;
+    }
+}
+
+.section_header
+{
+    margin-top: 2em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#education_content
+{
+    display: flex;
+    align-items: center;
+    img
+    {
+	display: inline-block;
+	width: 20%;
+	min-width: 10ch;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+    }    
+}
+
+#skills_list
+{
+    max-width: 100ch;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
+#text_section
+{
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#backstory
+{
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

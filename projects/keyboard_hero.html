@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/projects/keyboard_hero.css"> 
+    <title>Ryan's Webpage</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+
+      <h1 id="page_title">Keyboard Hero</h1>
+
+      <div id="banner_pic">
+	<img src="/resources/keyboard_hero.png"/>
+      </div>
+
+      <div id="info_div">
+	<h2 class="section_header">Goal</h2>
+	<p>I had 3 main goals that I had to accomplish in order to complete this project:</p>
+	<ol>
+	  <li>Create a fast game engine without using libraries that abstract away large or important parts.</li>
+	  <li>Use the game engine to create a game similar to Guitar Hero.</li>
+	  <li>Create a custom controller to play the game.</li>
+	</ol>
+	
+	<h2 class="section_header">Process</h2>
+	<p>My process involved lots of testing and design. It took place in 3 main parts: Game Engine, Game, Controller.</p>
+	<h3>Game Engine</h3>
+	<h4>Entity System</h4>
+	<p>The first part of the game engine that I did was the entity system. The entity system is the system that you use to track entities in your game. An entity is anything that has state. This is difficult because it has to be very flexible and maintain performance because it is such a critical element of any game engine. I experimented with many different types of entity systems, but I found that an <a href="https://en.wikipedia.org/wiki/Entity_component_system">Entity Component System (ECS)</a> was the most appealing to me due to it's flexibility.</p>
+	<h4>Platform Abstraction</h4>
+	<p>I had to abstract the operating system specific parts of the codebase so that in the future the engine could support multiple operating systems. I found that they easiest way to do this wasn't to create a library that was a wrapper around each operating system operation, but instead was to have the main running context be operating system specific and then the os-independent code be ran by the os-dependent code. I chose this way because many operating system operate differently, and this way doesn't enforce all oeprating systems to operate the same way.</p>
+	<h4>Graphics</h4>
+	<p>I chose to use the Vulkan API for graphics because of it's compatability with many different operating systems and OpenGL is technically deprecated. This presented a big issue because Vulkan is a massive API and is very complex. I had to write multiple test programs and make many different charts in order to learn how to properly use Vulkan.</p>
+	<img src="/resources/vulkan_graph_scaled.png"/>
+	<h4>App</h4>
+	<p>I had to answer the question: what is the app to the engine? My answer was that it was a list of 3 functions: a start function, a run function, and an end function. This had the benefit of allowing me to implement hot-reloading by having the game be a run time linked library in debug builds.</p>
+	<h4>Resources</h4>
+	<p>Another problem that I had to solve was how would I load 3D objects, audio files, and fonts. I chose to create my own loader for .obj 3D model files, but fonts were too difficult, so I used a library called FreeType2. I was running out of time, so I used a 3rd party library to load sound files.</p>
+
+	<h3>Game</h3>
+	<h4>Structure</h4>
+	<p>I wanted to structure the game into modes. I chose to design the game so that each mode would have it's own file with it's own start, run, and stop functions that would be called based on what the current mode was.</p>
+	<h4>Serialization</h4>
+	My game had to be able to create and store maps. For this I created my own library and file format to store the different levels inside the game.
+	<h3>Controller</h3>
+	<img src="/resources/keyboard_controller_scaled.jpeg"/>
+	<h4>Latches</h4>
+	<p>I found the physical design troubling because I would have to make the keys able to rotate freely and be printable seperate from the base so that I can attach them. I came up with many different methods and over 10 prototypes, but I ended up using a simple solution that only allowed me to attach it when it is rotated upwards.</p>
+	<h4>Software</h4>
+	<p>The library for the board that I was using was only in Python. I had to learn how the python code works and recreate it inside C++ so that it would be compatible with my project written in C++.</p>
+
+
+	<h2 class="section_header">Outcome</h2>
+	<p>I successfully completed my goals with the only exception being that I used libraries for font and audio file processing. I learned a lot about how computers work because I had to optimize the code for performance. I also learned about how graphics rendering, and operating systems work due to me having to deal with them extensively. However, the most important skill that I learned from this is designing the structure of a program. Most of the mistakes I made were because my program structure didn't allow me to accomplish something. I had to constantly restructure my program until I found out a way that worked. Now whenever I go into a project I map out the program structure thoroughly.
+
+      </div>
+
+    </div>
+
+    <script>
+
+      fetch("/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+	document.getElementById("navbar-div").innerHTML = html;
+	document.getElementById("navbar-home-id").className = 'active';
+    })
+    .catch(error => {
+	document.getElementById("navbar-div").innerHTML = "<h1>Failed to Load Navbar</h1>";
+	console.error("Error:", error);
+    });
+
+    </script>
+
+
+  </body>
+
+</html>

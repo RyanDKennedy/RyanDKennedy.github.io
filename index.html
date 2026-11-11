@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/index.css"> 
+    <title>Ryan's Webpage</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+
+
+      <h1 id="page_title">Ryan Kennedy</h1>
+
+      <figure id="banner_pic">
+	<img src="/resources/hiking_thumbs_up_scaled.png"/>
+      </figure>
+
+      <h2 id="description_header">About Me</h2>
+      <p id="description_text">I am a 2nd year Electrical Engineering student at Georgia Tech looking to work in the field of embedded system design. I am currently looking for an internship in the fields of hardware or software for the Summer of 2027.</p>
+
+      <div id="recommendation_list">
+	<h2>Some available pages to visit:</h2>
+	<ul>
+	  <li><a href="/about.html">About</a> - Contains information about me and my education/job experience!</li>
+	  <li><a href="/projects.html">Projects</a> - A showcase of the technical projects I&apos;ve done.</li>
+	  <li><a href="/resume.html">Resume</a> - View or download my resume!</li>
+	  <li><a href="/links.html">Links</a> - Where you can find my socials.</li>
+	</ul>
+      </div>
+
+
+    </div>
+
+    <script>
+
+      fetch("/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+	document.getElementById("navbar-div").innerHTML = html;
+	document.getElementById("navbar-home-id").className = 'active';
+    })
+    .catch(error => {
+	document.getElementById("navbar-div").innerHTML = "<h1>Failed to Load Navbar</h1>";
+	console.error("Error:", error);
+    });
+
+    </script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./links.css">
+    <title>Ryan's Links</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+      <h1 id="page_title">Links</h1>
+
+
+      <ul id="links_ul">
+
+	<li class="primary_list_item"><a href="https://www.linkedin.com/in/ryandaviskennedy/" target="_blank">linkedin</a></li>
+	  <p>Connect with me on Linkedin.</p>
+
+	<li class="primary_list_item"><a href="https://github.com/RyanDKennedy" target="_blank">github</a></li>
+	  <p>Contains my programming projects, and my software configurations. Most of my stuff is in private repositories, so you won't be able to see much.</p>
+	
+	<li class="primary_list_item"><a href="mailto:kennedyryan725@outlook.com">kennedyryan725@outlook.com</a></li>
+	  <p>Email me if you need to get in contact with me.</p>
+
+	</ul>
+
+    </div>
+
+    <script>
+	    fetch('navbar.html')
+		    .then(response => response.text())
+		    .then(html => {
+			    document.getElementById('navbar-div').innerHTML = html;
+			    document.getElementById('navbar-links-id').className = 'active';
+		    })
+		    .catch(error => {
+			    document.getElementById('navbar-div').innerHTML = '<h1>Failed to Load Navbar</h1>';
+			    console.error('Error:', error);
+		    });
+    </script>
+
+  </body>
+
+</html>

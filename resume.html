@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/resume.css"> 
+    <title>Ryan's Webpage</title>
+  </head>
+  <body>
+
+    <div id="navbar-div">
+    </div>
+
+    <div class="content">
+
+      <h1 id="page_title">My Resume</h1>
+
+      <a id="download_link" href="/resources/Kennedy_Resume_1100-2.pdf" download>Click Here To Download Resume</a>
+
+      <iframe id="resume_iframe" src="/resources/Kennedy_Resume_1100-2.pdf">
+      </iframe>
+
+
+    </div>
+
+    <script>
+
+      fetch("/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+	document.getElementById("navbar-div").innerHTML = html;
+	document.getElementById("navbar-resume-id").className = 'active';
+    })
+    .catch(error => {
+	document.getElementById("navbar-div").innerHTML = "<h1>Failed to Load Navbar</h1>";
+	console.error("Error:", error);
+    });
+
+    </script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,21 @@
+
+#resume_iframe
+{
+    margin-top: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+    height: 80vh;
+}
+
+#download_link
+{
+    display:block;
+    font-size: 2em;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+
+}

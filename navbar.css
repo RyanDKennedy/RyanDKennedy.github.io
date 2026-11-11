@@ -1,0 +1,86 @@
+.sidebar
+{
+    --primary_color: #007471;
+    --secondary_color: #004d96;
+
+    --font_color: #bbbbbb;
+    --font_color_secondary: #24e53e;
+    --background_color: #111111;
+
+    font-family: monospace;
+    color: var(--font_color);
+    background-color: var(--background_color);
+
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--background_color);
+}
+
+div.content
+{
+    margin-left: 200px;
+    padding: 1px 16px;
+    position: relative;
+}
+
+.sidebar a
+{
+    display: block;
+    color: var(--font_color);
+    background-color: var(--primary_color);
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active
+{
+    color: var(--font_color_secondary);
+    background-color: var(--secondary_color);
+}
+
+.sidebar a:hover
+{
+    color: var(--font_color_secondary);
+    background-color: var(--secondary_color);    
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+#warning_banner
+{
+    background-color: yellow;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    p
+    {
+	color: red;
+	/* text-align: center;*/
+	font-weight: bold;
+	text-decoration: underline;
+    }
+}
+
+
+
